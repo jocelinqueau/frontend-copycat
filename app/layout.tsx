@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
+import cn from 'classnames'
 
 import ThemeSwitcher from "./_components/themeSwitcher";
 
@@ -21,8 +22,8 @@ const RootLayout = ({
 }>) => {
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" className="w-full h-full" suppressHydrationWarning>
+      <body className={cn(inter.className, 'w-full h-full')}>
         <ThemeProvider attribute="class">
           <ThemeSwitcher />
           {children}

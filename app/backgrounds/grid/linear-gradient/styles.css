@@ -4,9 +4,9 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
-  grid-template-rows: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
+  grid-template-columns: repeat(6, var(--cell-size) 1fr) var(--cell-size) ;
+  grid-template-rows: repeat(6, var(--cell-size) 1fr) var(--cell-size) ;
   gap: 0;
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }

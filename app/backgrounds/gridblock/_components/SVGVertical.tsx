@@ -16,7 +16,7 @@ export const SVGVertical = ({ className }: { className?: string }) => {
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("text-neutral-900 dark:text-neutral-100", className)}
+      className={cn("text-[var(--backgroundish)]", className)}
     >
       <path d="M0.5 0.5V479" stroke="currentColor" strokeWidth={2} />
       <motion.path
@@ -38,7 +38,7 @@ export const SVGVertical = ({ className }: { className?: string }) => {
           gradientUnits="userSpaceOnUse"
         >
           <motion.stop offset="0%" stopColor="transparent" />
-          <motion.stop offset="50%" stopColor="var(--white-300)" />
+          <motion.stop offset="50%" stopColor="var(--foregroundish)" />
           <motion.stop offset="100%" stopColor="transparent" />
         </motion.linearGradient>
       </defs>

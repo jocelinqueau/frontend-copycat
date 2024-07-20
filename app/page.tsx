@@ -20,6 +20,10 @@ const Page = async () => {
           ))}
         </ul>
       </nav>
+
+      <div style={{ backgroundColor: "var(--red)" }}>
+        <h1>Hello World</h1>
+      </div>
     </div>
   );
 }

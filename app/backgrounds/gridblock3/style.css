@@ -1,0 +1,40 @@
+:root {
+  --cell-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
+  grid-template-rows: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
+  gap: 0;
+  width: 600px;
+  height: 600px;
+}
+
+.dot {
+  width: 100%;
+  height: 100%;
+  background-color: theme(colors.foreground);
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.line-horizontal {
+  height: 2px;
+  background-color: theme(colors.foreground);
+  align-self: center;
+  width: 100%;
+}
+
+.line-vertical {
+  width: 2px;
+  background-color: theme(colors.foreground);
+  justify-self: center;
+  height: 100%;
+}
+
+.empty {
+  width: 100%;
+  height: 100%;
+}

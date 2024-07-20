@@ -3,9 +3,8 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
 import cn from 'classnames'
 
-import ThemeSwitcher from "./_components/themeSwitcher";
-
 import "./globals.css";
+import Nav from "./_components/nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +24,7 @@ const RootLayout = ({
     <html lang="en" className="w-full h-full" suppressHydrationWarning>
       <body className={cn(inter.className, 'w-full h-full')}>
         <ThemeProvider attribute="class">
-          <ThemeSwitcher />
+          <Nav />
           {children}
         </ThemeProvider>
       </body>

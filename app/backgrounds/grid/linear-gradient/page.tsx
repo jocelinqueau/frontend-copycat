@@ -14,7 +14,7 @@ const Page = () => {
   const dotCount = 7;
   return (
     <div className="w-screen h-screen relative">
-        <div className={classNames("grid-container", "scale-110 absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] z-0 pointer-events-none")} >
+        <div className={classNames("grid-container", "scale-110 absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent,white)] z-0 pointer-events-none")} >
           <Row dotCount={dotCount} id={1} delay={secondDelay} duration={secondDuration} />
 
           <Column dotCount={dotCount} id={1} delay={secondDelay} duration={secondDuration} />

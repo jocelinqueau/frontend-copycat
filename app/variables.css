@@ -1,0 +1,8 @@
+/* Extra variables shoud go here */
+
+:root {
+  --red: theme('colors.red.500 / 10%');
+  --foregroundish: theme('colors.foreground / 70%');
+  --backgroundish: theme('colors.neutral.800');
+}
+

@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
 
   return (
     <button 
-      className="absolute top-0 right-0"
+      className="hover:text-foreground"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
       {theme}
     </button>

@@ -1,13 +1,10 @@
 'use server'
 
 import Link from "next/link";
+import getRoutes from '@/actions/getRoutes'
 
 const Page = async () => {
-  const routes = [
-    { path: "/backgrounds/gridblock", name: "Grid Block Background" },
-    { path: "/braydoncoyer", name: "Braydon Coyer" },
-    { path: "/aceternity/template/ai-saas-template", name: "AI SaaS Template" },
-  ];
+  const routes = getRoutes();
 
   return (
     <div>

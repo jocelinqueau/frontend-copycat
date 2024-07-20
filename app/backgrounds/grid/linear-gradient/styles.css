@@ -1,0 +1,12 @@
+:root {
+  --cell-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
+  grid-template-rows: var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) 1fr var(--cell-size) ;
+  gap: 0;
+  width: 600px;
+  height: 600px;
+}

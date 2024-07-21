@@ -1,0 +1,147 @@
+@font-face{
+  font-family: 'Redaction-Regular';
+  src: url('/fonts/redaction/Redaction-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction-Italic';
+  src: url('/fonts/redaction/Redaction-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction-Bold';
+  src: url('/fonts/redaction/Redaction-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_10-Regular';
+  src: url('/fonts/redaction/Redaction_10-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_10-Italic';
+  src: url('/fonts/redaction/Redaction_10-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_10-Bold';
+  src: url('/fonts/redaction/Redaction_10-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_20-Regular';
+  src: url('/fonts/redaction/Redaction_20-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_20-Italic';
+  src: url('/fonts/redaction/Redaction_20-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_20-Bold';
+  src: url('/fonts/redaction/Redaction_20-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_35-Regular';
+  src: url('/fonts/redaction/Redaction_35-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_35-Italic';
+  src: url('/fonts/redaction/Redaction_35-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_35-Bold';
+  src: url('/fonts/redaction/Redaction_35-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Redaction_50-Regular';
+  src: url('/fonts/redaction/Redaction_50-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_50-Italic';
+  src: url('/fonts/redaction/Redaction_50-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_50-Bold';
+  src: url('/fonts/redaction/Redaction_50-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_70-Regular';
+  src: url('/fonts/redaction/Redaction_70-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_70-Italic';
+  src: url('/fonts/redaction/Redaction_70-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_70-Bold';
+  src: url('/fonts/redaction/Redaction_70-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_100-Regular';
+  src: url('/fonts/redaction/Redaction_100-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction_100-Italic';
+  src: url('/fonts/redaction/Redaction_100-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Redaction_100-Bold';
+  src: url('/fonts/redaction/Redaction_100-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}

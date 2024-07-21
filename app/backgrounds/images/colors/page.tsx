@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -6,9 +7,20 @@ import { Upload } from 'lucide-react';
 import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-backend-webgl';
 import round from 'lodash/round';
+import convert from 'color-convert';
+import {closest} from 'color-2-name'
+import { CircleX } from 'lucide-react';
+
+export type RGB = [number, number, number];
 
 
-const getDominantColors = async (image: HTMLImageElement, k: number = 2): Promise<number[][]> => {
+interface Colors {
+  rgb: number[][]
+  hex: string[]
+  hsl: number[][]
+}
+
+const getDominantColors = async (image: HTMLImageElement, k: number = 2): Promise<Colors> => {
   // map an image to list of vectors, ie a matrix or a tensor
   const tensor = tf.browser.fromPixels(image);
   const resized = tf.image.resizeBilinear(tensor, [100, 100]);
@@ -44,16 +56,20 @@ const getDominantColors = async (image: HTMLImageElement, k: number = 2): Promis
   centroids.print();
 
   
-  const dominantColors = centroids.arraySync() as number[][]
-  console.log("dominantColors", dominantColors);
-  return dominantColors
+  const rbgs = centroids.arraySync() as RGB[]
+  const hexa = rbgs.map(rgb => convert.rgb.hex(rgb))
+  const hsl = hexa.map(hex => convert.hex.hsl(hex))
+  return {
+    rgb: rbgs,
+    hex: hexa,
+    hsl: hsl
+  }
 }
-
 
 const Page = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [colors, setColors] = useState<number[][]>([]);
-  const [selectedColor, setSelectedColor] = useState<number[]>([]);
+  const [hexasColors, setHexasColors] = useState<string[]>([]);
+  const [selectedColor, setSelectedColor] = useState<string>('');
 
   useEffect(() => {
     console.log("file", file);
@@ -62,13 +78,17 @@ const Page = () => {
       image.src = URL.createObjectURL(file);
       image.onload = async () => {
         const colors = await getDominantColors(image);
-        setColors(colors);
+        const hexa = colors.hex
+        setHexasColors(hexa);
       };
     }
   }, [file?.name]);
 
+  const _closest = selectedColor ? closest(`#${selectedColor}`) : null
+  console.log("_closest", _closest)
+
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center">
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-4">
       <Dropzone
         onDrop={(acceptedFiles: File[]) => {
           if (acceptedFiles.length > 0) {
@@ -98,31 +118,37 @@ const Page = () => {
                 )
               }
             </div>
-            <div className='text-xs text-gray-400 font-medium'>
-              {dropzone.acceptedFiles.length} files uploaded so far.
-            </div>
           </div>
         )}
       </Dropzone>
       {file && (
-        <div className="mt-4 rounded-sm overflow-hidden">
+        <div className="rounded-sm overflow-hidden relative">
+          <div className='absolute top-2 right-2 text-muted opacity-50 cursor-pointer hover:opacity-100' 
+            onClick={() => {
+              setFile(null)
+              setHexasColors([])
+              setSelectedColor('')
+            }}
+          >
+            <CircleX className='w-6 h-6' />
+          </div>
           <img src={URL.createObjectURL(file)} alt="Uploaded file" className="max-w-xs" />
         </div>
       )}
 
 
-      {colors.length > 0 && (
-        <div className="mt-4 rounded-sm overflow-hidden">
+      {hexasColors.length > 0 && (
+        <div className="rounded-sm overflow-hidden">
           <div className="flex flex-row items-center justify-center gap-2">
-            {colors.map((color, index) => (
-              <div onClick={() => setSelectedColor(color)} key={index} className="w-8 h-8 border border-gray-200 opacity-50 hover:opacity-100 rounded-sm cursor-pointer" style={{ backgroundColor: `rgb(${color.join(',')})` }} />
+            {hexasColors.map((color, index) => (
+              <div onClick={() => setSelectedColor(color)} key={index} className="w-8 h-8 border border-gray-200 opacity-50 hover:opacity-100 rounded-sm cursor-pointer" style={{ backgroundColor: `#${color}` }} />
             ))}
           </div>
         </div>
       )}
       {!!selectedColor.length && (
         <div>
-          the selected color is rgb({round(selectedColor[0], 2)}, {round(selectedColor[1], 2)}, {round(selectedColor[2], 2)})
+          the selected color is {`#${selectedColor}`} {_closest ? <>and seems to be <span className='font-semibold underline' style={{color: `#${selectedColor}`}}>{_closest.name}</span></> : ''}
         </div>
       )}
     </div>

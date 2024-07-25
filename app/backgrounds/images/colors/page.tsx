@@ -118,7 +118,7 @@ const Page = () => {
           >
             <CircleX className='w-6 h-6' />
           </div>
-          <img src={URL.createObjectURL(file)} alt="Uploaded file" className="max-w-screen-sm" />
+          <img src={URL.createObjectURL(file)} alt="Uploaded file" className="max-w-60 lg:max-w-screen-sm" />
         </div>
       )}
 

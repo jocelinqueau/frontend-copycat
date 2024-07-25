@@ -88,7 +88,11 @@ const Page = () => {
   console.log("_closest", _closest)
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-4">
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-4" 
+    style={{ 
+      background:  selectedColor && `linear-gradient(to bottom, #${selectedColor}, transparent)`
+      }}>
+
       <Dropzone
         onDrop={(acceptedFiles: File[]) => {
           if (acceptedFiles.length > 0) {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import getRoutes from '@/actions/getRoutes'
 
 const Page = async () => {
-  const routes = getRoutes({ maxDepth: 1 });
+  const routes = getRoutes({ startingPoint:'pages'});
 
   return (
     <div>

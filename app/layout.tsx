@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import cn from 'classnames'
 
 import "./globals.css";
-import Nav from "./_components/nav";
+import Nav from "./_components/nav"
 
 const inter = Inter({ subsets: ["latin"] });
 

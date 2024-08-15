@@ -78,3 +78,5 @@ const config = {
 } satisfies Config
 
 export default config
+
+// https://utopia.fyi/type/calculator?c=320,16,1.2,1024,24,1.25,5,2&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,2xl,12

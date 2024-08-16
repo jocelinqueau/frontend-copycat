@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss"
+import defaultTheme from "tailwindcss/defaultTheme";
+
 
 const config = {
   darkMode: ["class"],
@@ -71,6 +73,24 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        'redaction': ["Redaction-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-bold': ["Redaction-Bold", ...defaultTheme.fontFamily.sans],
+        'redaction-italic': ["Redaction-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-10': ["Redaction_10-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-10-italic': ["Redaction_10-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-20': ["Redaction_20-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-20-italic': ["Redaction_20-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-35': ["Redaction_35-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-35-italic': ["Redaction_35-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-35-bold': ["Redaction_35-Bold", ...defaultTheme.fontFamily.sans],
+        'redaction-50': ["Redaction_50-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-50-italic': ["Redaction_50-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-70': ["Redaction_70-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-70-italic': ["Redaction_70-Italic", ...defaultTheme.fontFamily.sans],
+        'redaction-100': ["Redaction_100-Regular", ...defaultTheme.fontFamily.sans],
+        'redaction-100-italic': ["Redaction_100-Italic", ...defaultTheme.fontFamily.sans],
       },
     },
   },

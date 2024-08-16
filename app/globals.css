@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './variables.css';
+@import './fonts.css';
 
 @layer base {
   :root {

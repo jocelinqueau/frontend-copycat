@@ -36,13 +36,17 @@ const _Input = ({
         "ring-offset-background",
         "focus-visible:ring-2",
         "focus-visible:ring-ring",
-        "focus-visible:ring-offset-2"
+        "focus-visible:ring-offset-2",
       );
     }
   }, [right, left]);
 
   return (
-    <XStack center gap={gap} className={cn("focus-within:ring-2 focus-within:ring-border", className)}>
+    <XStack
+      center
+      gap={gap}
+      className={cn("focus-within:ring-2 focus-within:ring-border", className)}
+    >
       {left && left}
       <Input ref={ref} {...props} />
       {right && right}

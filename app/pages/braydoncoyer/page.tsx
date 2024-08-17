@@ -1,6 +1,8 @@
 const noise =
   "https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png";
 
+import { Heading, YStack } from "joceui";
+
 export default function Page() {
   return (
     <main className="bg-[#030617] min-h-screen">
@@ -35,11 +37,19 @@ export default function Page() {
           </div>
         </div>
         <div className="z-10 relative py-24">
-          <h1 className=" text-lg flex flex-col items-center text-white font-extrabold font-manrope [&>*]:leading-115 text-center inter. md:text-xl">
-            <span>Hey, I’m Jocelin !</span>
-            <span>Welcome to my corner</span>
-            <span>of the internet</span>
-          </h1>
+          <YStack align="center">
+            <Heading
+              size="4"
+              weight="extrabold"
+              className="text-white font-manrope"
+            >
+              <YStack center>
+                <span>Hey, I&apos;m Jocelin !</span>
+                <span>Welcome to my corner</span>
+                <span>of the internet</span>
+              </YStack>
+            </Heading>
+          </YStack>
           <div></div>
         </div>
       </div>

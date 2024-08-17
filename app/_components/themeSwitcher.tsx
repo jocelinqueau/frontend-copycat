@@ -28,17 +28,15 @@ const ThemeSwitcher = () => {
   return (
     <XStack
       as="button"
-      className="group"
+      className="text-muted-foreground hover:text-foreground"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       align="center"
       gap="4"
     >
-      <Text size="8" color="muted" className="group-hover:text-foreground">
-        {" "}
+      <Text size="8" color="current">
         {icon}
       </Text>
-      <Text size="8" color="muted" className="group-hover:text-foreground">
-        {" "}
+      <Text size="8" color="current">
         {theme}
       </Text>
     </XStack>

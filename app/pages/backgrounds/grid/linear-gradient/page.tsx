@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import classNames from "classnames";
+import { Heading } from "joceui";
 
 import { Column } from "./_components/Column";
 import { Row } from "./_components/Row";
@@ -61,9 +62,9 @@ const Page = () => {
         <Row dotCount={dotCount} id={4} delay={delay} duration={duration} />
       </div>
 
-      <h1 className="z-10 text-fl-4xl font-semibold text-center pt-20">
+      <Heading weight="bold" className="z-10 text-center pt-20">
         Hello world
-      </h1>
+      </Heading>
     </div>
   );
 };

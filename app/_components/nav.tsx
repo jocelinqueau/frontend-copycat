@@ -9,15 +9,15 @@ import ThemeSwitcher from "./themeSwitcher";
 const Nav = () => {
   const router = useRouter();
   return (
-    <nav className="absolute top-2 right-2 z-50 text-muted-foreground">
+    <nav className="fixed top-2 right-2 z-50">
       <XStack
-        className="cursor-pointer hover:text-foreground"
+        className="cursor-pointer text-muted-foreground hover:text-foreground"
         onClick={() => router.push("/")}
         align="center"
         gap="4"
       >
         <Home className="size-em" />
-        <Text size="8" color="muted" className="hover:text-foreground">
+        <Text size="8" color="current">
           home
         </Text>
       </XStack>

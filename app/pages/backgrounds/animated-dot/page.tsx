@@ -2,18 +2,15 @@
 
 import { Text } from "joceui";
 
-import DotPattern from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/classnames";
+
+import DotPattern from "./_component/dot-pattern";
 
 const Page = () => {
   return (
     <div className="relative flex !h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <Text
-        size="2"
-        weight="medium"
-        className="z-10 whitespace-pre-wrap tracking-tighter "
-      >
-        Dot Pattern
+      <Text size="2" weight="medium" className="z-10 whitespace-pre-wrap">
+        Animated Dot Pattern
       </Text>
       <DotPattern
         className={cn(

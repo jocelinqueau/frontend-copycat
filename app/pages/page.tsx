@@ -4,26 +4,12 @@ import Link from "next/link";
 
 import getRoutes from "@/actions/getRoutes";
 
+import PageMenu from "../_components/pageMenu";
+
 const Page = async () => {
   const routes = getRoutes({ startingPoint: "pages" });
 
-  return (
-    <div>
-      <nav>
-        <ul>
-          {routes.map((route) => (
-            <li key={route.path} className="hover:text-blue-500">
-              <Link href={route.path}>{route.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div style={{ backgroundColor: "var(--red)" }}>
-        <h1>Hello World</h1>
-      </div>
-    </div>
-  );
+  return <PageMenu routes={routes} />;
 };
 
 export default Page;

@@ -86,4 +86,17 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .w-em {
+    width: 1em;
+  }
+
+  .h-em {
+    height: 1em;
+  }
+
+  .size-em {
+    width: 1em;
+    height: 1em;
+  }
 }

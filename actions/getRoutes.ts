@@ -1,27 +1,39 @@
 import fs from 'fs';
 import path from 'path';
 
-const getRoutes = () => {
-  const pagesDir = path.join(process.cwd(), 'app');
+interface GetRoutesProps {
+  startingPoint?: string;
+  maxDepth?: number;
+}
+
+const getRoutes = ({ startingPoint = '', maxDepth = Infinity }: GetRoutesProps = {}) => {
+  const pagesDir = path.join(process.cwd(), 'app', startingPoint);
   const routes: { path: string; name: string }[] = [];
 
-  const readDir = (dir: fs.PathLike) => {
+  const readDir = (dir: fs.PathLike, currentDepth: number = 0) => {
+    if (currentDepth > maxDepth) return;
+
     const files = fs.readdirSync(dir, 'utf-8');
     files.forEach((file) => {
       const filePath = path.join(dir.toString(), file);
       const stat = fs.statSync(filePath);
       if (stat.isDirectory()) {
-        readDir(filePath);
+        readDir(filePath, currentDepth + 1);
       } else if (file === 'page.tsx') {
+        if (currentDepth === 0) {
+          return;
+        }
         const relativePath = path.relative(pagesDir, filePath);
-        let routePath = '/' + relativePath.replace(/\\/g, '/').replace('/page.tsx', '');
-        if (routePath === '/page.tsx') {
+        let routePath = '/' + path.join(startingPoint, relativePath).replace(/\\/g, '/').replace('/page.tsx', '');
+        if (routePath === `/${startingPoint}`) {
           routePath = '/';
+        } else if (routePath.endsWith('/')) {
+          routePath = routePath.slice(0, -1);
         }
         routes.push({ path: routePath, name: routePath });
       }
-    })
-  }
+    });
+  };
 
   readDir(pagesDir);
   return routes;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useId } from "react";
 
 import { cn } from "@/lib/classnames";
@@ -13,6 +14,7 @@ interface DotPatternProps {
   className?: string;
   [key: string]: any;
 }
+
 export function DotPattern({
   width = 16,
   height = 16,

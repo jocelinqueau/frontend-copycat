@@ -1,7 +1,8 @@
-'use server'
+"use server";
 
 import Link from "next/link";
-import getRoutes from '@/actions/getRoutes'
+
+import getRoutes from "@/actions/getRoutes";
 
 const Page = async () => {
   const routes = getRoutes({ maxDepth: 1 });
@@ -23,6 +24,6 @@ const Page = async () => {
       </div>
     </div>
   );
-}
+};
 
 export default Page;

@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/classnames";
 import DotPattern from "@/components/magicui/dot-pattern";
+import { cn } from "@/lib/classnames";
 
 const Page = () => {
   return (
@@ -13,13 +13,12 @@ const Page = () => {
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
         )}
-
         width={24}
         height={24}
         cr={1.5}
       />
     </div>
   );
-}
+};
 
 export default Page;

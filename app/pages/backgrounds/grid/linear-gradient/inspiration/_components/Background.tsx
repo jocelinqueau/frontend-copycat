@@ -1,8 +1,8 @@
 "use client";
-import { cn } from "@/lib/classnames";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import React, { useId } from "react";
+
+import { cn } from "@/lib/classnames";
 
 // The inset property in CSS is a shorthand for the four inset properties, top, right, bottom and left in one declaration.
 
@@ -13,7 +13,7 @@ export const Background = () => {
       {Array.from({ length: 6 }).map((_, index) => (
         <div className="flex" key={"grid-column" + index}>
           {Array.from({ length: 10 }).map((_, index) => (
-            <GridBlock key={`grid-row` + index} />
+            <GridBlock key={"grid-row" + index} />
           ))}
         </div>
       ))}

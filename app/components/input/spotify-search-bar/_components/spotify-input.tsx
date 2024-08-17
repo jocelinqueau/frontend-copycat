@@ -1,11 +1,10 @@
-'use client'
-
-import { useLayoutEffect, useRef } from "react";
+"use client";
 
 import { type StackGap } from "joceui";
-import { Input, InputProps } from "@/components/ui/input";
+import { XStack } from "joceui";
+import { useLayoutEffect, useRef } from "react";
 
-import { XStack } from 'joceui'
+import { Input, InputProps } from "@/components/ui/input";
 
 interface _InputProps extends InputProps {
   right?: React.ReactNode;

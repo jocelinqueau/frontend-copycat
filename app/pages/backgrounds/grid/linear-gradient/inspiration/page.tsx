@@ -1,9 +1,7 @@
-import { Background } from "./_components/Background"
+import { Background } from "./_components/Background";
 
 const Page = () => {
-  return (
-    <Background />
-  )
-}
+  return <Background />;
+};
 
-export default Page
+export default Page;

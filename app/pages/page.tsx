@@ -1,10 +1,11 @@
-'use server'
+"use server";
 
 import Link from "next/link";
-import getRoutes from '@/actions/getRoutes'
+
+import getRoutes from "@/actions/getRoutes";
 
 const Page = async () => {
-  const routes = getRoutes({ startingPoint:'pages'});
+  const routes = getRoutes({ startingPoint: "pages" });
 
   return (
     <div>
@@ -23,6 +24,6 @@ const Page = async () => {
       </div>
     </div>
   );
-}
+};
 
 export default Page;

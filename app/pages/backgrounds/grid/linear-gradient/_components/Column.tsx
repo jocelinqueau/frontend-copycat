@@ -1,11 +1,12 @@
-import React from 'react'
-import { VerticalLinearLine } from './VerticalLinearLine'
+import React from "react";
+
+import { VerticalLinearLine } from "./VerticalLinearLine";
 
 interface ColumnProps {
-  dotCount: number
-  id: string | number
-  delay?: number
-  duration?: number
+  dotCount: number;
+  id: string | number;
+  delay?: number;
+  duration?: number;
 }
 export const Column = ({ dotCount, id, delay, duration }: ColumnProps) => {
   return (
@@ -18,5 +19,5 @@ export const Column = ({ dotCount, id, delay, duration }: ColumnProps) => {
         </React.Fragment>
       ))}
     </>
-  )
-}
+  );
+};

@@ -6,12 +6,12 @@ interface GetRoutesProps {
   maxDepth?: number;
 }
 
-const getRoutes = ({ startingPoint = '', maxDepth }: GetRoutesProps = {}) => {
+const getRoutes = ({ startingPoint = '', maxDepth = Infinity }: GetRoutesProps = {}) => {
   const pagesDir = path.join(process.cwd(), 'app', startingPoint);
   const routes: { path: string; name: string }[] = [];
 
   const readDir = (dir: fs.PathLike, currentDepth: number = 0) => {
-    if (maxDepth !== undefined && currentDepth > maxDepth) return;
+    if (currentDepth > maxDepth) return;
 
     const files = fs.readdirSync(dir, 'utf-8');
     files.forEach((file) => {
@@ -20,6 +20,9 @@ const getRoutes = ({ startingPoint = '', maxDepth }: GetRoutesProps = {}) => {
       if (stat.isDirectory()) {
         readDir(filePath, currentDepth + 1);
       } else if (file === 'page.tsx') {
+        if (currentDepth === 0) {
+          return;
+        }
         const relativePath = path.relative(pagesDir, filePath);
         let routePath = '/' + path.join(startingPoint, relativePath).replace(/\\/g, '/').replace('/page.tsx', '');
         if (routePath === `/${startingPoint}`) {
